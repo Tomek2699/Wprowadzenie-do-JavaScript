@@ -91,7 +91,6 @@ function deleteRecord(index) {
 function playRecord(index) {
   const record = records[index];
   record.forEach((element) => {
-    const delay = element[1];
     setTimeout(function () {
       playSound(element[0]);
     }, element[1]);
