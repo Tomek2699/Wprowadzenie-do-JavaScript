@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="slider">
+        <div class="slides">
+            <img src="https://picsum.photos/id/1003/600/400" alt="Photo1">
+        </div>
+        <div class="slides">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Photo2">
+        </div>
+        <div class="slides">
+            <img src="https://picsum.photos/id/1018/600/400" alt="Photo3">
+        </div>
+        <div id="first">
+            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+        </div>
+        <div id="second">
+            <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <div id="dots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
