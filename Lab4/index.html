@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NoteKeep</title>
+</head>
+<body>
+    <div class="headerContainer">
+        <div>
+            <p class="title">NoteKeep</p>
+        </div>
+        <div class="headerButtonsContainer">
+            <button class="headerButton" id="AddNoteHeaderButton">Nowa notatka</button>
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="NotesContainer">
+            <div class="note" id="hiddenNote">
+                <h3 class="NoteTitle"></h3>
+                <p class="NoteDate"></p>
+                <p class="NoteContent"></p>
+            </div>
+            <div class="pinnedContainer">
+                <div id="pinned">
+                    <h1>Przepięte</h1>
+                </div>
+                <hr>
+                <div id="PinnedNotesContainer" class="NotesGrid breakLine"></div>
+            </div>
+            <div class="line"></div>
+            <div class="regularContainer">
+                <div id="normal">
+                    <h1>Luźne</h1>
+                </div>
+                <hr>
+                <div id="RegularNotesContainer" class="NotesGrid"></div>
+            </div>
+        </div>
+        <div class="DetailNoteBG">
+            <div class="DetailNoteContainer">
+                <div class="DetailNoteTitleAndColor">
+                    <input type="checkbox" id="DetailNotePinned">
+                    <input type="text" placeholder="Tytuł:" id="DetailNoteTitle">
+                    <input type="color" id="colorpicker" value="#F4FF39">
+                </div>
+                <div class="DetailNoteContent">
+                    <textarea  id="textContent" placeholder="Wpisz treść"></textarea>
+                </div>
+                <div class="DetailNoteButtonsContainer">
+                    <button class="DetailNoteButton" id="DetailNoteCancelButton">Anuluj</button>
+                    <button class="DetailNoteButton" id="DetailNoteDeleteButton">Usuń</button>
+                    <button class="DetailNoteButton" id="DetailNoteSaveButton">Zapisz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
