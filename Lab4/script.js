@@ -18,7 +18,7 @@ function ChangeNoteCreatorColor(){
 
 
 function AddNewNote(){
-    IdOfNoteToEditOrDelete = 0
+    IdOfNoteToEditOrDelete = 'empty'
     document.querySelector('#DetailNoteTitle').value = ""
     document.querySelector('#textContent').value = ""
     document.querySelector('#colorpicker').value = '#F4FF39'
@@ -36,7 +36,7 @@ function HideNoteCreator(){
 }
 
 function NoteCreatorSaveNote(){
-    if (IdOfNoteToEditOrDelete == 0) {
+    if (IdOfNoteToEditOrDelete == 'empty') {
         const note = new Note()
         note.title = document.querySelector('#DetailNoteTitle').value
         note.content = document.querySelector('#textContent').value
@@ -62,12 +62,13 @@ function NoteCreatorSaveNote(){
     }
 }
 
-function NoteCreatorEditNote(ev){
-    const fullId = ev.target.id
-    const id = parseInt(fullId.split('-')[1])
+function NoteCreatorEditNote(element){
+    const fullId = element.target.id
+    const id = fullId.split('note-')[1]
     IdOfNoteToEditOrDelete = id
-    const egNote = new Note()
-    const note = egNote.GetNote(id)
+    const newNote = new Note()
+    const note = newNote.GetNote(id)
+    console.log(note)
 
     document.querySelector('#DetailNoteTitle').value = note.title
     document.querySelector('#textContent').value = note.content
@@ -80,11 +81,10 @@ function NoteCreatorEditNote(ev){
 }
 
 function NoteCreatorDeleteNote(){
-    if (IdOfNoteToEditOrDelete != 0) {
+    if (IdOfNoteToEditOrDelete != 'empty') {
         const note = new Note()
         note.DeleteNote(IdOfNoteToEditOrDelete)
         RemoveNoteFromView()
-
         HideNoteCreator()
     }
 }
